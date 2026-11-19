@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>SamasthaLive — Samastha Centenary Conference 2027 | 100 Years of Luminance</title>
+    <meta name="description" content="Join the historic Samastha Kerala Jam'iyyathul Ulama Centenary Conference — January 28-31, 2027 at Wadi Haramain, Malappuram. Register, donate, volunteer and watch live." />
+    <meta name="keywords" content="Samastha, Centenary, Conference, 2027, Kerala, Jam'iyyathul Ulama, Islamic, Wadi Haramain, Malappuram" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Samastha Centenary Conference 2027 — 100 Years of Luminance" />
+    <meta property="og:description" content="Join the historic Samastha Kerala Jam'iyyathul Ulama Centenary Conference at Wadi Haramain, Malappuram." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/conference-poster.png" />
+
+    <!-- Theme color — updated dynamically by JS -->
+    <meta name="theme-color" content="#0B3F31" />
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('samastha-theme')
+          var theme = saved || 'dark'
+          if (theme === 'system') {
+            theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+          }
+          document.documentElement.setAttribute('data-theme', theme)
+          var color = theme === 'light' ? '#F4F8F5' : '#0B3F31'
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) meta.setAttribute('content', color)
+        } catch (e) {}
+      })()
+    </script>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts: Playfair Display, Inter, Noto Sans Malayalam, Amiri -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets: Primary bundle and root style.css for VS Code Live Server -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./assets/app.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Preload ES module chunks for instant loading -->
+    <link rel="modulepreload" href="./assets/vendor-react.js" />
+    <link rel="modulepreload" href="./assets/app.js" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Main JavaScript application bundle for Live Server & Static Hosting -->
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>
